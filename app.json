@@ -32,6 +32,10 @@
         "BOT_TOKEN": {
             "description": "ID of the message to edit.",
             "value": ""
+        },
+        "CHAT_LINK": {
+            "description": "Remove 'https://t.me/joinchat/' From The Join Link And Paste It",
+            "value": "KRweOAuslxY5YjU1"
         }
     },
     "buildpacks": [
