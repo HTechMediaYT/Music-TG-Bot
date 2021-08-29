@@ -9,11 +9,15 @@ import time
 from config import Config
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 
-ABS="Developer"
+ABS="Developer🔧"
 APPER="NxtStark"
 OWNER="Owner"
+MALIK="https://t.me/joinchat/PgjSbql-NtFhM2Nl"
 B2="telegram.dog/NxtStark"
 BUTTON1="Group🎧"
+SPPRT="Support🛠"
+ONR="OWNER☺"
+CHNNL="Channel📢"
 SUPPORT="telegram.dog/HTechMediaSupport"
 CHANNEL="telegram.dog/HTechMedia"
 
@@ -27,12 +31,12 @@ async def start(client, message):
          reply_markup=InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton(BUTTON1, url=f"https://t.me/joinchat/PgjSbql-NtFhM2Nl"),
-                    InlineKeyboardButton(OWNER☺, url=f"https://telegram.dog/{Config.OWNER}")
+                    InlineKeyboardButton(BUTTON1, url=MALIK),
+                    InlineKeyboardButton(ONR, url=f"https://telegram.dog/{Config.OWNER}")
                  ],[
-                    InlineKeyboardButton(Support🛠, url=SUPPORT),
-                    InlineKeyboardButton(ABS🔧, url=B2),
-                    InlineKeyboardButton(Channel, url=CHANNEL)
+                    InlineKeyboardButton(SPPRT, url=SUPPORT),
+                    InlineKeyboardButton(ABS, url=B2),
+                    InlineKeyboardButton(CHNNL, url=CHANNEL)
             ]
           ]
         ),
