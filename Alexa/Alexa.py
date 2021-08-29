@@ -12,11 +12,10 @@ from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 ABS="Developer🔧"
 APPER="NxtStark"
 OWNER="Owner"
-MALIK="https://t.me/joinchat/PgjSbql-NtFhM2Nl"
 B2="telegram.dog/NxtStark"
 BUTTON1="Group🎧"
 SPPRT="Support🛠"
-ONR="OWNER☺"
+ONR="OWNER👁‍🗨"
 CHNNL="Channel📢"
 SUPPORT="telegram.dog/HTechMediaSupport"
 CHANNEL="telegram.dog/HTechMedia"
@@ -31,7 +30,7 @@ async def start(client, message):
          reply_markup=InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton(BUTTON1, url=MALIK),
+                    InlineKeyboardButton(BUTTON1, url=f"https://telegram.dog/joinchat/{Config.CHAT_LINK}"),
                     InlineKeyboardButton(ONR, url=f"https://telegram.dog/{Config.OWNER}")
                  ],[
                     InlineKeyboardButton(SPPRT, url=SUPPORT),
@@ -103,7 +102,7 @@ def a(client, message):
         message.reply_audio(audio_file, caption=rep, parse_mode='HTML',quote=False, title=title, duration=dur, performer=performer, thumb=thumb_name)
         m.delete()
     except Exception as e:
-        m.edit('**An internal Error Occured, Report This @redbullfed!!**')
+        m.edit('**An internal Error Occured, Report This @HTechMediaSupport!!**')
         print(e)
     try:
         os.remove(audio_file)
