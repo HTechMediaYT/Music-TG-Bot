@@ -13,9 +13,9 @@ ABS="Developer"
 APPER="NxtStark"
 OWNER="Owner"
 B2="telegram.dog/NxtStark"
-BUTTON1="🎧Group🎧"
-SUPPORT="tellegram.dog/HTechMediaSupport"
-CHANNEL="tellegram.dog/HTechMedia"
+BUTTON1="Group🎧"
+SUPPORT="telegram.dog/HTechMediaSupport"
+CHANNEL="telegram.dog/HTechMedia"
 
 def time_to_seconds(time):
     stringt = str(time)
@@ -28,11 +28,11 @@ async def start(client, message):
             [
                 [
                     InlineKeyboardButton(BUTTON1, url=f"https://t.me/joinchat/PgjSbql-NtFhM2Nl"),
-                    InlineKeyboardButton(OWNER, url=f"https://telegram.dog/{Config.OWNER}")
+                    InlineKeyboardButton(OWNER☺, url=f"https://telegram.dog/{Config.OWNER}")
                  ],[
-                    InlineKeyboardButton(OWNER, url=SUPPORT),
-                    InlineKeyboardButton(ABS, url=B2),
-                    InlineKeyboardButton(OWNER, url=f"https://telegram.dog/NxtStark")
+                    InlineKeyboardButton(Support🛠, url=SUPPORT),
+                    InlineKeyboardButton(ABS🔧, url=B2),
+                    InlineKeyboardButton(Channel, url=CHANNEL)
             ]
           ]
         ),
