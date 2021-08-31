@@ -1,5 +1,3 @@
-# subinps, Shamilhabeebnelli 
-
 from pyrogram import Client, filters
 
 import youtube_dl
@@ -7,17 +5,25 @@ from youtube_search import YoutubeSearch
 import requests
 
 import os
-
+import time
 from config import Config
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 
 
-BUTTON1="📜 Source Code 📜"
-B2="telegram.dog/shamilhabeeb"
+ABS="Developer🔧"
+APPER="NxtStark"
 OWNER="Owner"
-GITCLONE="github.com/shamilhabeebnelli/song-bot"
-ABS="Developer"
-APPER="shamilhabeeb"
+B2="telegram.dog/NxtStark"
+BUTTON1="Group🎧"
+SPPRT="Support🛠"
+ONR="OWNER👁‍🗨"
+CHNNL="Channel📢"
+SUPPORT="telegram.dog/HTechMediaSupport"
+CHANNEL="telegram.dog/HTechMedia"
+
+def time_to_seconds(time):
+    stringt = str(time)
+    return sum(int(x) * 60 ** i for i, x in enumerate(reversed(stringt.split(':'))))
 
 @Client.on_message(filters.command('start') & filters.private)
 async def start(client, message):
@@ -25,10 +31,12 @@ async def start(client, message):
          reply_markup=InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton(BUTTON1, url=GITCLONE)
+                    InlineKeyboardButton(BUTTON1, url=f"https://telegram.dog/joinchat/{Config.CHAT_LINK}"),
+                    InlineKeyboardButton(ONR, url=f"https://telegram.dog/{Config.OWNER}")
                  ],[
-                    InlineKeyboardButton(OWNER, url=f"https://telegram.dog/{Config.OWNER}"),
-                    InlineKeyboardButton(ABS, url=B2)
+                    InlineKeyboardButton(SPPRT, url=SUPPORT),
+                    InlineKeyboardButton(ABS, url=B2),
+                    InlineKeyboardButton(CHNNL, url=CHANNEL)
             ]
           ]
         ),
@@ -45,7 +53,7 @@ THUMB="bit.ly/thumbnil"
 def a(client, message):
     query=message.text
     print(query)
-    m = message.reply('fetching datas from m.youtube.com')
+    m = message.reply('🔎')
     ydl_opts = {"format": "bestaudio[ext=m4a]"}
     try:
         results = []
@@ -69,7 +77,7 @@ def a(client, message):
             #     m.edit("Exceeded 30mins cap")
             #     return
 
-            performer = f"[SmL\MwK 🇮🇳]" 
+            performer = f"[NxtStark]" 
             thumb_name = f'thumb{message.message_id}.jpg'
             thumb = requests.get(thumbnail, allow_redirects=True)
             open(thumb_name, 'wb').write(thumb.content)
@@ -84,13 +92,13 @@ def a(client, message):
         )
         print(str(e))
         return
-    m.edit("**m.youtube.com responded, uploading...**")
+    m.edit("💃🏻")
     try:
         with youtube_dl.YoutubeDL(ydl_opts) as ydl:
             info_dict = ydl.extract_info(link, download=False)
             audio_file = ydl.prepare_filename(info_dict)
             ydl.process_info(info_dict)
-        rep = f'🎶 <b>Title:</b> <a href="{link}">{title}</a>\n⌚ <b>Duration:</b> <code>{duration}</code>\n📻 <b>Uploaded By:</b> <a href="https://t.me/mwklinks">[MwK] Song-Bot</a>'
+        rep = f'🎶 <b>Title:</b> <a href="{link}">{title}</a>\n⌚ <b>Duration:</b> <code>{duration}</code>\n📻 <b>Uploaded By:</b> <a href="https://t.me/HTechMedia">HTechMedia</a>'
         secmul, dur, dur_arr = 1, 0, duration.split(':')
         for i in range(len(dur_arr)-1, -1, -1):
             dur += (int(dur_arr[i]) * secmul)
@@ -98,7 +106,7 @@ def a(client, message):
         message.reply_audio(audio_file, caption=rep, parse_mode='HTML',quote=False, title=title, duration=dur, performer=performer, thumb=thumb_name)
         m.delete()
     except Exception as e:
-        m.edit('**An Internal error occured; Report This @redbullfed!!**')
+        m.edit('**An Internal error occured; Report This @HTechMediaSupport!!**')
         print(e)
     try:
         os.remove(audio_file)
