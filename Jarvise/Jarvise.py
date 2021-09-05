@@ -53,7 +53,7 @@ THUMB="bit.ly/thumbnil"
 def a(client, message):
     query=message.text
     print(query)
-    m = message.reply('🔎')
+    m = message.reply('🔐')
     ydl_opts = {"format": "bestaudio[ext=m4a]"}
     try:
         results = []
