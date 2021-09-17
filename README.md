@@ -39,8 +39,7 @@
 ---
 
 ```
-You can download youtube to MP3 from telegram bot #musics
-with & without commands
+You can download youtube to MP3 from telegram bot #musics without commands
 ```
 
 ## Deploy - Simplest Way
